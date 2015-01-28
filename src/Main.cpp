@@ -10,6 +10,12 @@ using namespace envire;
 
 int main(int argc, char** argv)
 {
+    if (argc != 3)
+    {
+        std::cerr << "usage: mls_to_text environment mls_id" << std::endl;
+        exit(1);
+    }
+
     boost::scoped_ptr<Environment> env(Environment::unserialize( argv[1] ));
     env->updateOperators();
 
